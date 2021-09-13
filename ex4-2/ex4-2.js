@@ -17,4 +17,4 @@ let score = function(x) {
     
 }
 
-console.log(score(f));
+console.log(score(80));
