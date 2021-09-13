@@ -6,4 +6,4 @@ for (let i=0 ; i< people.length ; i++){
 }
 // 2. Write the command to remove "Greg" from the array.
 people.shift();
-console.log(pepole[]);
+console.log(people);
