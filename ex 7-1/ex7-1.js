@@ -1,4 +1,4 @@
-let myBook = {
+const myBook = {
     name : 'lord of the pc',
     author : 'shadi',
     year : 2021,
@@ -7,8 +7,8 @@ let myBook = {
 }
 
 function books (abook) {
-    let whatsAbout = ( 'The book: ${abook.name} was written by: ${abook.author}puplished in:${ abook.year}');
-    return whatsAbout;
+    return `The book: ${abook.name} was written by: ${abook.author} puplished in:${ abook.year}`;
+    
 }
 
 console.log(books(myBook));
