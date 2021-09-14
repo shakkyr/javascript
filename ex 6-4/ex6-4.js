@@ -1,35 +1,77 @@
 // 1. Create array containing jumps of acrobats, each 3 numbers representative 1 jumper.
 
-const arr = [5,5,8,7,-1,5];
 
-    let jump1 = [];
-    let jump2 = [];
-   for (let i=0 ; i <=2 ; i++){
-    if (arr[i] >= 0){
-        
-       jump1.push(arr[i]);
-       console.log(arr[i]);
+
+let arr=[5,5,8,7,-1,5];
+
+let bestAvgJump=arr=>{
+    let tempArr=[]
+    let sum=0;
+    let counter=0;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]===-1){
+            counter+=1;
+        }
+        else sum+=arr[i];
+        if((i+1)%3===0){
+            temp.push(sum/(3-counter));
+            sum=0,counter=0;
+        }
     }
-   }
+    return temp;
+}
+// this also works for the best jump just send the right arr
+let bestAvg=arr=>{
+    let max=0;
+    arr.forEach(i => {
+        max=Math.max(max,i);
+    });
+    return max;
+}
+arrAvg=bestAvgJump(arr);
+console.log(arrAvg);
+console.log(bestAvg(arrAvg));
+console.log(bestAvg(arr));
 
-   for (let i=3 ;i < arr.length ; i++) {
-       if (arr[i] >= 0){
-    jump2.push(arr[i]);
-    console.log(arr[i]);
-       }
-   }
 
-//    function avgJumper (jump1 , jump2){
-//        let avrg = [];
-//        jump1.forEach((item)=>{
-//          let summ1 += item;
-//         avrg.push();
+
+
+
+
+
+
+
+
+
+
+//     let jump1 = [];
+//     let jump2 = [];
+//    for (let i=0 ; i <=2 ; i++){
+//     if (arr[i] >= 0){
+        
+//        jump1.push(arr[i]);
+//        console.log(arr[i]);
 //     }
-// )
-           
 //    }
-console.log(jump1);
-console.log(jump2)
+
+//    for (let i=3 ;i < arr.length ; i++) {
+//        if (arr[i] >= 0){
+//     jump2.push(arr[i]);
+//     console.log(arr[i]);
+//        }
+//    }
+
+// //    function avgJumper (jump1 , jump2){
+// //        let avrg = [];
+// //        jump1.forEach((item)=>{
+// //          let summ1 += item;
+// //         avrg.push();
+// //     }
+// // )
+           
+// //    }
+// console.log(jump1);
+// console.log(jump2)
 
 
 
