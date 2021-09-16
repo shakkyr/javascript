@@ -3,15 +3,20 @@ const mycountry = {
     capital : 'Helsinki',
     language : 'finnish',
     population : 5.5,
-    neighbours : ['sweden','norway','u.k'],
+    neighbours : ['sweden','norway','russia'],
     describe () {
         return ` ${this.country} "has "  ${this.population}  "million people, thier mother tongueis"  ${this.language} "they have" + ${this.neighbours.length}  "ghbouring countries and a capital called"  ${this.capital}`;
-      }
-     
+      },
+      checkIsland : function (island){
+            this.isIsland = island == 0 ? true : false;
+        
+}
 
-};
 
-console.log(mycountry.describe());
+
+}
+mycountry.checkIsland(mycountry.neighbours.length);
+console.log(mycountry);
 
 
 
