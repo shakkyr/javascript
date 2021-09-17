@@ -7,7 +7,7 @@
 
 const array = ["Hello", "Good Day", "Your Welcome", "hotdog", "hamburgers"];
 // let newArr = array.map(v => v.toLowerCase()).join('').split('');
-let newStr = array.join('').split(' ').join('');
+let newStr = array.join('').split(' ').join('')
 
 // let countr = arr => {
 //     let newStr = arr.join('').split(' ').join('');
@@ -19,11 +19,11 @@ let newStr = array.join('').split(' ').join('');
 //     return finObject; 
 //     };
 let countr = arr => {
-    let newStr = arr.join('').split(' ').join('');
+    let newStr = arr.join('').split(' ').join('').toLowerCase();
     let finObject = {};
     for ( let i = 0 ; i < newStr.length ; i++ ) {
         if (newStr.charAt(i) in finObject)
-            finObject[newStr[i]] +=1;
+            ++finObject[newStr[i]];
         
         else finObject[newStr[i]]  = 1;
     }
