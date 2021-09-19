@@ -32,8 +32,8 @@ const data = [
     },
     },
     {
-    name: "Mary",
-    birthday: "1-10-1977",
+    name: "Maria",
+    birthday: "1-11-1978",
     favoriteFoods: {
     meats: ["hamburgers", "lamb"],
     fish: ["anchovies", "tuna"],
@@ -68,17 +68,7 @@ const data = [
     };
             
                     
- 
 
-//         let newArr2 = [];
-//         arr.filter(arr1=> {
-//             if (+(arr1.birthday.substr(-4)) < 1990);
-//                 newArr2.push(arr1)
-//                 return newArr2;
-                    
-//     })
-//     return newArr2;
-// }
 console.log(arrDate(data));
 
 
@@ -88,13 +78,8 @@ console.log(arrDate(data));
 
 function food(arr) {
     let newArr3 = [];
-    arr.forEach(element => {
-        return newArr3.push(element.favoriteFoods.values);
-    });
+    let result = (arr.map((val)=> (val.favoriteFoods.meats).concat(val.favoriteFoods.fish))).join(",")
+    result.split(",").map(function(val) {return newArr3[val] = (result.split(',').filter(function(v) {return(v==val)})).length })
     return newArr3;
-    
 }
-
 console.log(food(data));
-
-
