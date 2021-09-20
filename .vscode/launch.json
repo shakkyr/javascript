@@ -1,10 +1,24 @@
 {
-	// Use IntelliSense to learn about possible configuration attributes.
-	// Hover to view descriptions of existing attributes.
-	// For more information, visit
-	// https://gitlab.otris.de/tools/vscode-janus-debug/wikis/home
 	"version": "1.5.3",
 	"configurations": [
+		{
+			"name": "Attach",
+			"port": 9229,
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "pwa-node"
+		},
+		{
+			"name": "Attach",
+			"port": 9229,
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "pwa-node"
+		},
 		{
 			"name": "Launch Script on Server",
 			"request": "launch",
@@ -47,6 +61,12 @@
 				"include": "**/*.js",
 				"exclude": "**/node_modules/**"
 			}
+		},
+		{
+			"type": "pwa-node",
+			"name": "Run Current File",
+			"request": "launch",
+			"program": "${workspaceFolder}\\ex 13-4\\ex13-4.js"
 		}
 	]
 }

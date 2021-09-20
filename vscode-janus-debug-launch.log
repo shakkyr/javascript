@@ -1,0 +1,11 @@
+INFO |00000.987|JanusDebugSession: launchRequest
+DEBUG|00000.987|JanusDebugSession: my workspace: d:\learning\fullstack\javascript
+INFO |00000.988|JanusDebugSession: Disabled source map support because i could not find the output directory of your source maps
+DEBUG|00000.988|DebugAdapterIPC: connect to VS Code extension (sock19444)
+DEBUG|00000.991|DebugAdapterIPC: connected to VS Code extension
+INFO |00000.991|DebugAdapterIPC: checkForAdditionalDebugJSONHelpers
+DEBUG|00000.991|DebugAdapterIPC: checkForAdditionalDebugJSONHelpers
+DEBUG|00001.119|DebugAdapterIPC: findURIsInWorkspace
+ERROR|00001.466|JanusDebugSession: launchRequest failed: Error: Unhandled error ocurred: The TCP-connection failed: connect ECONNREFUSED 127.0.0.1:11000
+DEBUG|00001.471|JanusDebugSession: done; disconnecting SDS connection
+INFO |00001.476|JanusDebugSession: disconnectRequest
