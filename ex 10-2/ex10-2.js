@@ -34,9 +34,23 @@ function showFirstAndLast (arr3) {
 console.log(showFirstAndLast(myarr2));
 
 // ---------------------------- 4 --------------------------
+let voTese = 'hello my name is shadi'
 
 
+function voFind (str){
+    let arrOfVows = voTese.split('');
+    const vowObj = {
+        a: 0,
+        e: 0,
+        i: 0,
+        o: 0,
+        u: 0,
+}
+arrOfVows.filter(letter => vowObj.hasOwnProperty(letter) ? vowObj[letter]++ :"");
+return vowObj;
+}
 
+console.log(voFind(voTese));
 
 
 
