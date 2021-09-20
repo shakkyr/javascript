@@ -74,7 +74,51 @@ console.log(capital(nam));
 
 // ----------------------------- 6 -----------------------------------
 
-
+let nam1 = 'shadi neuman rada';
 function shiftLetters(str) {
-    
+let strArray = str.toLowerCase().split("");
+
+let letterChange = strArray.map(function(value, index){
+    if(str.charCodeAt(index) < 97 || str.charCodeAt(index) > 122){
+      return value
+    }else{
+      return String.fromCharCode(str.charCodeAt(index)+1)
+    }
+});
+return letterChange.join('');
 }
+
+console.log(shiftLetters(nam1));
+//     let namArr = str.split('');
+//     let newa = namArr.map(a => a.fromCharCode(a.charCodeAt(index)-1));
+//     return newa
+// }
+// console.log(shiftLetters(nam1));
+
+
+
+// let strArray = str.toLowerCase().split("");
+
+// let letterChange = strArray.map(function(value, index, array){
+//     if(str.charCodeAt(index) < 97 || str.charCodeAt(index) > 122){
+//       return value
+//     }else{
+//       return String.fromCharCode(str.charCodeAt(index)+1)
+//     }
+// });
+
+
+
+// --------------------------------- 7 -----------------------------------------------
+
+let nam2 = 'shadi neuman rada will become better in the close future';
+
+function swapCase (str) {
+    let newArr = str.split(' ');
+   let final = newArr.map((a,b) => a.toUpperCase());
+    return final;
+        
+    });
+}
+
+console.log(swapCase (nam2));
