@@ -77,9 +77,12 @@ console.log(arrDate(data));
 // // objects as the value.
 
 function food(arr) {
-    let newArr3 = [];
-    let result = (arr.map((val)=> (val.favoriteFoods.meats).concat(val.favoriteFoods.fish))).join(",")
-    result.split(",").map(function(val) {return newArr3[val] = (result.split(',').filter(function(v) {return(v==val)})).length })
+    let newArr3 = {};
+    let result = (arr.map((ele)=> (ele.favoriteFoods.meats).concat(ele.favoriteFoods.fish))).join(",")
+    result.split(",").map(function(ele
+        ) {return newArr3[ele
+    ] = (result.split(',').filter(function(v) {return(v==ele
+        )})).length })
     return newArr3;
 }
 console.log(food(data));

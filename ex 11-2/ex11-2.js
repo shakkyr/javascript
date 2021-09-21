@@ -84,14 +84,73 @@ const school = {
     age: 21,
     },
     ],
+    
+};
 
 // ------------------------------------------ 1 ----------------------------------------
-    findPerson:(type , id) => {
-        let newObj = {};
-        if (this.teachers) 
-                
-            
-    }   
+function findPerson (type, id) {
+    let resu = [];
 
-    };
+    // 
+    if (type === 'teachers' || type === "students"){
 
+                // resu = school[type].filter(per =>  per.id === id  )
+                return school[type].find(per =>  per.id === id )
+    }
+    // if (resu.length === 0 ) {
+    //         return 'nobody'
+    //     };
+
+    // return resu;
+ }
+
+console.log(findPerson('students', 10));
+
+
+function assignStudent (id , subj) {
+     let tec1 =   school.teachers.find(per =>  (per.subjects.includes(subj) && per.capacityLeft > 0))
+     let stud1 =   school.students.find(per =>  (per.id === id ))
+
+     if ( tec1 !== undefined ){ 
+        
+        if( stud1 !== undefined    ){
+            tec1.students.push(stud1);
+            tec1.capacityLeft-- ;
+            return true
+          
+     }
+     else return 0;
+    
+    }
+    else return -1;
+}
+
+
+function assignAllStudent (subj){
+    
+    for (let i= 0; i < school.students.length ; i++ ){
+     let check = assignStudent (school.students[i].id , subj);
+      
+     if ( check == -1){
+            return 'no teacher available'
+     }
+
+     
+    }
+    return 'ok'
+}
+
+console.log(assignAllStudent ("history"));
+console.log(school.teachers);
+
+
+
+function assignTeachersSubject ( tId , subj) {
+    let teac2 =  findPerson("teachers" , tId);
+        teac2.subjects.push(subj);
+}
+
+
+// console.log(assignStudent (12 , "history"));
+
+// // school.assignStudent = (id , sub) 
