@@ -12,6 +12,8 @@ function findSmallest(a, b, c){
 
 
     // 1. First find the line that contains the problem. Write it down.
+    // line 2
+    //line 4
     // line 10
     // and the code is not giving the smallest number
 
