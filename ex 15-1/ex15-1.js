@@ -65,8 +65,8 @@ funcD2();
 
 
 function funcE() {
-    console.log("Value of f in local scope: ", f);
+    console.log("Value of f in local scope: ", f); // print 1|
 }
-console.log("Value of f in global scope: ", f);
+console.log("Value of f in global scope: ", f); //print undefined |because the variable was initalized after the print
 var f = 1;
 funcE();
