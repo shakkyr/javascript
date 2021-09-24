@@ -361,14 +361,55 @@
 // console.log(modifiedSum([1, 2 ], 5));
 
 
-function findShort(s){
-  let arr = s.split(" ");
-  let resu = arr[0].length ;
-  for (let i = 0 ; i< arr.length ; i++){
-    if (arr[i].length < arr[0].length)
-          return arr[i].length -1;
-  }
-}
+// function findShort(s){
+//   let arr = s.split(" ");
+//   let resu = arr[0].length ;
+//   for (let i = 0 ; i< arr.length ; i++){
+//     if (arr[i].length < arr[0].length)
+//           return arr[i].length -1;
+//   }
+// }
 
-a="bitcoin take over the world maybe who knows perhaps";
-console.log(findShort(a));
+// a="bitcoin take over the world maybe who knows perhaps";
+// console.log(findShort(a));
+
+// function out (num){
+//   function inside (int){
+//   return  num * int /2 ;
+//   }
+//   return inside;
+// }
+
+// // let newvar = out (10);
+
+// // console.log(newvar(4));
+// console.log((0.1 + 0.2));
+
+// function lastSurvivor(letters, coords) {
+//          let new = letters.slice(1) 
+
+// }
+
+function lastSurvivor(letters, coords) {
+
+  let i = 0;
+  while (i <= coords.length){
+          letters = letters.replace(letters[coords[i]],"");
+          i++;
+          
+  }
+  return letters;
+  }
+ 
+
+
+str='shadirada'
+arr=[1,2,3,2];
+
+console.log(lastSurvivor(str, arr));
+
+
+// sadirada
+// sairada
+// saiada
+// saada
