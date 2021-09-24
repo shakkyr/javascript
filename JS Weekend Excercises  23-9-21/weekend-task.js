@@ -405,18 +405,142 @@ console.log(camel ("The_Stealth_Warrior"));
 // Examples:
 // toWeirdCase( "String" );//=> returns "StRiNg"
 // toWeirdCase( "Weird string case" );//=> returns "WeIrD StRiNg CaSe"
+// ------------------------- A -----------------------------
+
+function toWeirdCase (str) {
+     return str.split(` `).map(a=>[...a].map((e,i)=>i%2?e.toLowerCase():e.toUpperCase()).join(``)).join(` `);
+ 
+    // return (...str).map((a,i) => i % 2 ? a.toUpperCase() a.toLowerCase()).join('');
+
+}
+
+console.log(toWeirdCase ("Weird string case"));
+// ------------------------------- B -------------------------------
+const casesW = (str) => {
+    let  newString = [];
+    for( let i in str ) {
+        if(i%2 == 0){
+            newString.push(str[i].toUpperCase());
+        } else {
+            newString.push(str[i].toLowerCase());
+        }
+    }
+    return newString.join('');
+};
+
+console.log(casesW('Weird string case'));
 
 
-// function toWeirdCase (str) {
-//     const newString = str.map(a => str.indexOf(a) % 2 ==0 ? a.replace(a, a.toUpperCase()) : a.replace(a.toLowerCase()) );
-//     return newString;
+
+// Ex5.5 - Abbreviate two words
+// Write a function to convert a name into initials. This kata strictly takes two words with one space
+// in between them.
+// The output should be two capital letters with a dot separating them.
+// It should look like this:
+// Sam Harris => S.H
+// Patrick Feeney => P.F6.6
+
+
+nickNames = (str) => {
+    let newStr = str.split(' ');
+    // let first = newStr.shift().toUpperCase();
+  
+    // let second = newStr.shift().toUpperCase();
+  return newStr[0][0] +'.'+ newStr[1][0];
+    
+}
+
+console.log(nickNames ('Sam Harris'));
+
+
+// Ex5.6 - Mask
+// Usually when you buy something, you're asked whether your credit card number, phone number
+// or answer to your most secret question is still correct. However, since someone could look over
+// your shoulder, you don't want that shown on your screen. Instead, we mask it.
+// Your task is to write a function maskify, which changes all but the last four characters into '#'.
+// Examples
+// maskify("4556364607935616") == "############5616"
+// maskify( "64607935616") == "#######5616"
+// maskify( "1") == "1"
+// maskify( "") == ""
+// // "What was the name of your first pet?"
+// maskify("Skippy") == "##ippy"
+// maskify("Nananananananananananananananana Batman!") ==
+// "####################################man!"
+
+
+// maskify = (str) => {
+//     // if (str.length <= 4) return str;
+//     // else {
+//     // for (let i= 0; i < str.length -4 ; i++){
+//     //      str.replace(str[i], '#');
+//     // }}
+//     // return str;
 // }
 
-// function weirdC (str) {
-//     for (let i =0 ; i< str.length ; i+2){
-//             str[i].replace(str[i], str[i].toUpperCase());
-//     }
-//     return str;
-// }
+maskify = (str) => {return str.slice(0, -4).replace(/./g, '#') + str.slice(-4)};
 
-// console.log(weirdC ('shadi'));
+
+
+console.log(maskify("45asdsad334"));
+
+
+function maskify2(str) {
+    return str.length <= 4 ? str : "#".repeat(str.length - 4) + str.substr(str.length - 4);
+  }
+  console.log(maskify2("1234325346534"));
+
+
+
+//   Ex5.7 - shortest words
+// Simple, given a string of words, return the length of the shortest word(s).
+// String will never be empty and you do not need to account for different data types.
+
+let word = 'aaa bbbb sssss dasfaf sdgsdgsgsgdsd dada av';
+
+// ------------------------- A --------------------------------
+shortWord = (str) => {
+let newWord = str.split(' ');
+let shortest = 1000;
+let theWord ='';
+for (let i=0; i < newWord.length ; i++){
+    if ( newWord[i].length < shortest){
+            shortest = newWord[i].length;
+            theWord = newWord[i];
+            
+    }
+}
+
+return theWord;
+}
+
+
+console.log(shortWord(word));
+
+// ----------------------------- B -----------------------------
+shortWord2 = (str) => {
+   return str.split(' ').sort(function(a, b){return b.length - a.length}).pop(); // ordered from longest to shortest
+}
+
+console.log(shortWord2(word));
+
+
+// Ex5.8 - shortest words version 2
+// Given a string of words, return the longest word[s].
+// String will never be empty and you do not need to account for different data types.
+
+shortWord3 = (str) => {
+    return str.split(' ').sort(function(a, b){return b.length - a.length}).shift(); // ordered from longest to shortest
+ }
+ 
+ console.log(shortWord3(word));
+
+
+//  Ex6.1 - Mumbling
+// This time no story, no theory. The examples below show you how to write function
+// accum :
+// Examples:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeeezzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+// The parameter of accum is a string which includes only letters from a..z and A..Z .
