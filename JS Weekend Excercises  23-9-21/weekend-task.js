@@ -1,8 +1,10 @@
-// Ex1.1 - Yes or No
-// Complete the method that takes a boolean value and return a "Yes" string for true, or a "No"
-// string for false.
+// // Ex1.1 - Yes or No
+// // Complete the method that takes a boolean value and return a "Yes" string for true, or a "No"
+// // string for false.
 // const obj = {};
-// obj.isBoolean =;
+// obj.isBoolean = function (params) {
+                   
+// };
 // console.log(obj);
 
 
@@ -544,3 +546,63 @@ shortWord3 = (str) => {
 // accum("RqaEzty") -> "R-Qq-Aaa-Eeeezzzz-Tttttt-Yyyyyyy"
 // accum("cwAt") -> "C-Ww-Aaa-Tttt"
 // The parameter of accum is a string which includes only letters from a..z and A..Z .
+
+
+accum = (str) => {
+    let newStr = str.split('');
+    let myArr = [];
+    for ( let i = 0 ; i< newStr.length ; i ++){
+            myArr.push(newStr[i].repeat(i+1).replace(newStr[i][0], newStr[i][0].toUpperCase() ));
+    }
+    return myArr.join('-');
+}
+
+console.log(accum("RqaEzty"));
+console.log(accum("cwAt"));
+
+
+// Ex6.2 - Counting Duplicates
+// Count the number of Duplicates
+// Write a function that will return the count of distinct case-insensitive alphabetic characters and
+// numeric digits that occur more than once in the input string. The input string can be assumed to
+// contain only alphabets (both uppercase and lowercase) and numeric digits.
+// Example
+// "abcde" -> 0 # no characters repeats more than once
+// "aabbcde" -> 2 # 'a' and 'b'
+// "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+// "indivisibility" -> 1 # 'i' occurs six times
+// "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+// "aA11" -> 2 # 'a' and '1'
+// "ABBA" -> 2 # 'A' and 'B' each occur twice
+// ---------------------- ------ A ---------------------------------
+duplicated1 = (str) => {
+       let i = 0;
+    str.split('').filter( a => str.includes() ? i++ : i =1)
+   return i;
+}
+
+
+
+console.log(duplicated1("222333344445555"));
+console.log(duplicated1("aabBcde"));
+
+
+// ------------------------------------- B --------------------------------
+duplicated2 = (str) =>{
+    
+    let result = 0,
+    soltingObject = {};
+     str.toLowerCase().split('').map(str => {
+    if (!soltingObject.hasOwnProperty(str)) {
+      soltingObject[str] = 0;
+    } else {
+      if (soltingObject[str] === 0) {
+        result += 1;
+      }
+      soltingObject[str] = soltingObject[str] + 1;
+    }
+});
+return result;
+}
+
+    console.log(duplicated2("222333344445555"));
