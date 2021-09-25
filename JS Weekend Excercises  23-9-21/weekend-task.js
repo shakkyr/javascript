@@ -1,31 +1,33 @@
 // // Ex1.1 - Yes or No
 // // Complete the method that takes a boolean value and return a "Yes" string for true, or a "No"
 // // string for false.
-// const obj = {};
-// obj.isBoolean = (ele) => { ele == true ? 'yes':'no'};
-// console.log(obj.isBoolean(10));
+const obj = {};
+obj.isBoolean = (ele) =>  ele  ? 'yes':'no';
+console.log(obj.isBoolean(10));
 // obj = {
 //     isBoolean :function (val) { 
-//         if (val == true)
+//         console.log(val);
+//         if (val )
 //             return 'yes'
         
 //         if (val == false)
-//            return 'no'
+//             return 'no'
         
 //         }
- 
-// };
 
+// }
+// console.log(9==true);
+// console.log(obj.isBoolean(10))
 
-const obj={
-    isBoolean: function (val) {
-        if (val==true)
-        return 'Yes'
-        if (val==false)
-        return 'No'
-    }
-}
-console.log(obj.isBoolean(0))
+// const obj={
+//     isBoolean: function (val) {
+//         if (val)
+//         return 'Yes'
+//         if (!val)
+//         return 'No'
+//     }
+// }
+// console.log(obj.isBoolean(0))
 
 
 
@@ -710,6 +712,7 @@ isIsogram = (str) => {
     let arr = [];
     str= str.toLowerCase().split('');
     str.forEach(element => {
+
             if ( arr.includes(element)){}
 
 
@@ -757,8 +760,46 @@ isIsogram2 = (str) => {
 // - ForEach
 // - Map
 // Using only for(), array and objects (without other js methods)
+let x = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// =========================== A Filter ===========================================
+filter = (arr, callBack ) => {
+    let myArr = [];
+    for (let i = 0 ; i < arr.length ; i++){
+            if (callBack(arr[i])){
+                myArr.push(arr[i])
+            };
+    }
+    return myArr
+};
+
+checkEven = a =>  a%2===0;
+duble = a => a*2;
+
+console.log(filter(x,checkEven));
+// ============================== B forEach =======================================
+foreach = (arr, callBack ) => {
+    
+    for (let i = 0 ; i < arr.length ; i++){
+            callBack(arr[i], i )
+    }
+};
 
 
+
+
+
+// ================================= C Map =========================================
+mapp = (arr, callBack ) => {
+    let myArr = [];
+    for (let i = 0 ; i < arr.length ; i++){
+            
+                myArr.push(callBack(arr[i]))
+            };
+            return myArr;
+    };
+    
+
+console.log(mapp(x, duble));
 
 
 
