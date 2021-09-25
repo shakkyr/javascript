@@ -2,12 +2,34 @@
 // // Complete the method that takes a boolean value and return a "Yes" string for true, or a "No"
 // // string for false.
 // const obj = {};
-// obj.isBoolean = function (params) {
-                   
+// obj.isBoolean = (ele) => { ele == true ? 'yes':'no'};
+// console.log(obj.isBoolean(10));
+// obj = {
+//     isBoolean :function (val) { 
+//         if (val == true)
+//             return 'yes'
+        
+//         if (val == false)
+//            return 'no'
+        
+//         }
+ 
 // };
-// console.log(obj);
 
 
+const obj={
+    isBoolean: function (val) {
+        if (val==true)
+        return 'Yes'
+        if (val==false)
+        return 'No'
+    }
+}
+console.log(obj.isBoolean(0))
+
+
+
+// console.log(obj.isBoolean(10));
 
 
 
@@ -17,13 +39,25 @@
 // For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
 // [10, 343445353, 3453445, 3453545353453] should return 3453455.
 
-function lowestNumbersSum (arr1, arr2) {
+// ============================= A ==================================
+lowestNumbersSum = (arr) => {
+    arr = arr.sort((a,b)=> a-b);
+    return arr[0] + arr[1];
+}
+
+console.log(lowestNumbersSum([19, 5, 42, 2, 77]));
+console.log(lowestNumbersSum([10, 343445353, 3453445, 3453545353453]));
+
+
+// ================================ B ======================================
+
+function lowestNumbersSum1 (arr1, arr2) {
   
     
     return Math.min(...arr1) + Math.min(...arr2); 
 }
 
-console.log(lowestNumbersSum ([19, 5, 42, 2, 77], [10, 343445353, 3453445, 3453545353453]));//12
+console.log(lowestNumbersSum1 ([19, 5, 42, 2, 77], [10, 343445353, 3453445, 3453545353453]));//12
 
 
 
@@ -40,13 +74,29 @@ console.log(lowestNumbersSum ([19, 5, 42, 2, 77], [10, 343445353, 3453445, 34535
 // Testing: [1, 1, 1, 1] ==> 15
 // Testing: [1, 0, 1, 1] ==> 11
 // However, the arrays can have varying lengths, not just limited to 4.
-
+// ======================= A ===================================
 function binaryToInteger (arr) {
       let num = arr.join('');
      return parseInt(num,2);
 }
+// =========================== B  =================================
+binaryToInteger1 =(arr) => {
+    arr = arr.reverse();
+    let sum= 0 ;
+    for ( let i = 0 ; i < arr.length ; i++) {
+            sum+= arr[i] * Math.pow(2,i);
+    }
+    return sum;
+}
+
+
 let arr9 = [1, 0, 0, 1];
 let arr15 = [1, 1, 1, 1];
+let arr2 = [0, 0, 1, 0];
+console.log(binaryToInteger1(arr2));
+console.log(binaryToInteger1(arr9));
+console.log(binaryToInteger1(arr15));
+
 
 console.log(binaryToInteger (arr9));//9
 console.log(binaryToInteger (arr15));//15
@@ -656,8 +706,26 @@ console.log(longest (c,c));
 // isIsogram("aba") == false
 // isIsogram("moOse") == false // -- ignore letter case
 
-// ================ A ==========================
 isIsogram = (str) => {
+    let arr = [];
+    str= str.toLowerCase().split('');
+    str.forEach(element => {
+            if ( arr.includes(element)){}
+
+
+            else arr.push(element);
+        
+    });
+    return arr.length == str.length;
+}
+
+console.log(isIsogram("moOse"));
+console.log(isIsogram("aba"));
+console.log(isIsogram("Dermatoglyphics"));
+
+
+// ================ A ==========================
+isIsogram1 = (str) => {
     let myStr = str.toLowerCase().split("").sort().join("").match(/(.)\1+/g);
     if(myStr == null){
     return true} else{
@@ -665,9 +733,9 @@ isIsogram = (str) => {
     }
 }
 
-console.log(isIsogram("moOse"));
-console.log(isIsogram("aba"));
-console.log(isIsogram("Dermatoglyphics"));
+console.log(isIsogram1("moOse"));
+console.log(isIsogram1("aba"));
+console.log(isIsogram1("Dermatoglyphics"));
 
 // ========================== B ================================
 isIsogram2 = (str) => {
