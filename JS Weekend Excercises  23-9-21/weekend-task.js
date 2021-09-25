@@ -576,9 +576,17 @@ console.log(accum("cwAt"));
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 // ---------------------- ------ A ---------------------------------
 duplicated1 = (str) => {
-       let i = 0;
-    str.split('').filter( a => str.includes() ? i++ : i =1)
-   return i;
+    let count =[];
+    let newArr = str.toLowerCase().split('');
+    newArr.forEach(element => {
+        if (count.includes(element)){}
+        
+        else count.push(element);
+        
+    });
+    
+    
+    return count.length;
 }
 
 
@@ -606,3 +614,100 @@ return result;
 }
 
     console.log(duplicated2("222333344445555"));
+
+
+//     Ex6.3 - organize strings
+// Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the
+// longest possible, containing distinct letters,
+// each taken only once - coming from s1 or s2.
+// Examples:
+// a = "xyaabbbccccdefww"
+// b = "xxxxyyyyabklmopq"
+// longest(a, b) -> "abcdefklmopqwxy"
+// a = "abcdefghijklmnopqrstuvwxyz"
+// longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+
+let a = "xyaabbbccccdefww"
+let b = "xxxxyyyyabklmopq"
+let c= "abcdefghijklmnopqrstuvwxyz"
+
+longest = (a,b) => {
+    let myArr = a.split('').concat(b.split('')).sort();
+    let connected = [];
+    myArr.forEach(element => {
+        if (connected.includes(element)){
+           
+        }
+        else  connected.push(element);
+    });
+    return connected.join('');
+}
+
+
+console.log(longest (a,b));
+console.log(longest (c,c));
+
+
+// Ex6.4 - isogram
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement
+// a function that determines whether a string that contains only letters is an isogram. Assume the
+// empty string is an isogram. Ignore letter case.
+// isIsogram("Dermatoglyphics") == true
+// isIsogram("aba") == false
+// isIsogram("moOse") == false // -- ignore letter case
+
+// ================ A ==========================
+isIsogram = (str) => {
+    let myStr = str.toLowerCase().split("").sort().join("").match(/(.)\1+/g);
+    if(myStr == null){
+    return true} else{
+    return false;
+    }
+}
+
+console.log(isIsogram("moOse"));
+console.log(isIsogram("aba"));
+console.log(isIsogram("Dermatoglyphics"));
+
+// ========================== B ================================
+isIsogram2 = (str) => {
+    str = str.toLowerCase().split("")
+    let result = str.reduce((a, b) => {
+      !a.includes(b) && a.push(b);
+      return a;
+    }, []);
+    return result.length === str.length;
+  }
+  console.log(isIsogram2("moOse"));
+  console.log(isIsogram2("aba"));
+  console.log(isIsogram2("Dermatoglyphics"));
+
+
+//   Ex7 - Implement The Following JS Methods -
+// Implement the following methods -
+// - Filter
+// - ForEach
+// - Map
+// Using only for(), array and objects (without other js methods)
+
+
+
+
+
+// Ex 8 - Find the Perimeter of a Rectangle
+// Create a function that takes length and width and finds the perimeter of a rectangle.
+// Examples
+// f ➞ 26
+// indPerimeter(6, 7)
+// findPerimeter(20, 10) ➞ 60
+// findPerimeter(2, 9) ➞ 22
+// Notes
+// ● Don't forget to return the result.
+// ● If you're stuck, find help in the Resources tab.
+// ● If you're really stuck, find solutions in the Solutions tab.
+
+rectanglePerimeter = (length, width) => {
+    return (length + width) *2;
+}
+
+console.log(rectanglePerimeter(20 , 10));
