@@ -1,6 +1,6 @@
-const textvalue = document.querySelector("#text"),
-      click = document.querySelector("#click"),
-      alert = document.querySelector("#demo")
+const textvalue = document.querySelector(".text"),
+      click = document.querySelector(".click"),
+      alert = document.querySelector(".demo")
 myFunction = () => {
   
   if (textvalue.value.length < 100) {
