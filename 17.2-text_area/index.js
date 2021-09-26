@@ -1,13 +1,15 @@
 const textvalue = document.querySelector(".text"),
       click = document.querySelector(".click"),
-      alert = document.querySelector(".demo")
+      alert = document.querySelector(".warning")
+      console.log();
 myFunction = () => {
   
   if (textvalue.value.length < 100) {
    alert.innerHTML =
-      "YOU MUST WRITE MORE THAT 100 CHARACTERS";
-  } else if (x >= 100) {
+      "you shoud put 100 character";
+  } else if ( textvalue.value.length>= 100) {
    alert.innerHTML = "";
   }
 }
 click.addEventListener("click", myFunction);
+textvalue.addEventListener("keyup", myFunction);
