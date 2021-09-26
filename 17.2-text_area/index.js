@@ -12,4 +12,4 @@ myFunction = () => {
   }
 }
 click.addEventListener("click", myFunction);
-textvalue.addEventListener("keyup", myFunction);
+textvalue.addEventListener("input", myFunction);
