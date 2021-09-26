@@ -3,7 +3,7 @@ const up = document.querySelector('.up'),
     text = document.querySelector('.text');
 
 let size = 30;
-text.style.fontSize = size + 'px';
+text.style.fontSize = size +'px';
 
 
 up.addEventListener('click', () => {
@@ -16,11 +16,11 @@ down.addEventListener('click', () => {
 });
 
 function sizeUpDown(action) {
-    if (action === 'up' && size < 100) {
+    if (action == 'up' && size < 100) {
         size++;
     }
-    else if(action ==="down" && size > 6){
+    else if(action =="down" && size > 6){
         size--;
     }
-   
+    text.style.fontSize = size + 'px';
 };
