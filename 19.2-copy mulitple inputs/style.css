@@ -1,0 +1,58 @@
+body {
+     text-align :center;
+    }
+
+h1 {
+    font-weight: bolder;
+    font-size: 80px;
+}
+
+.varify {
+    font-size: 70px;
+}
+.box {
+    border: black solid 3px;
+    width: 500px;
+    height: 200px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.smallBoxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-right: 40px;
+    margin-top: 60px;
+
+   
+}
+
+li {
+    
+    width:50px ;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
+textarea {
+    width:50px ;
+    height: 50px;
+    border: grey 2px solid;
+    text-align: center;
+     font-size: 40px;
+}
+
+.submit {
+    background:black ;
+    color: cornsilk;
+    width: 80px;
+    height: 30px;
+}
