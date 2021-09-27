@@ -20,7 +20,7 @@ massege.className='warning';
 
 
 // =================== head masseeage ============================
-let myText = document.createTextNode ('please enter your age to check');
+let myText = document.createTextNode ('please enter your age to check if you can drink alcohol');
 paragraph.appendChild(myText);
 
 
