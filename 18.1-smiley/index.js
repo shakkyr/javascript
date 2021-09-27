@@ -16,7 +16,7 @@ chekNumber =() => {
         } 
         }
 
-    else error.innerHTML = ` dude enter just numbers`;   
+    else error.innerHTML = 'dude enter just numbers';   
         error.style.color ='red'
     
 }   
