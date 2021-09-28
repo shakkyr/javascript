@@ -11,19 +11,19 @@ setInterval(() => {
   let realSeconds = today.getSeconds();
 
   if (realHours < 10) {
-    hours.innerText = '0' +' ' + realHours;
+    hours.innerHTML = '0' +' ' + realHours;
     }
-  else {hours.innerText = realHours;
+  else {hours.innerHTML = realHours;
        }
   if (realMinuts < 10) {
-    minutes.innerText = '0' +' ' + realMinuts;
+    minutes.innerHTML = '0' +' ' + realMinuts;
      }
-  else {minutes.innerText = realMinuts;
+  else {minutes.innerHTML = realMinuts;
 }
   if (realSeconds < 10) {
-    seconds.innerText = '0' +' ' + realSeconds;
+    seconds.innerHTML = '0' +' ' + realSeconds;
   }
-  else {seconds.innerText = realSeconds;}
+  else {seconds.innerHTML = realSeconds;}
 }, 1000);
 
 // ====================== analog clock =============================
