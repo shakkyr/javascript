@@ -7,7 +7,7 @@ let currentTimer = 0,
     reset = document.querySelector(".reset"),
     mins = document.querySelector(".minutes"),
     secs = document.querySelector(".seconds"),
-    cents = document.querySelector(".centiseconds");
+    cents = document.querySelector(".milliseconds");
 
 function pad(n) {
   return ("00" + n).substr(-2);
