@@ -1,37 +1,27 @@
-setInterval(displayTime, 1000);
+let startBtn = document.querySelector('#start');
+let pauseBtn = document.querySelector('#pause');
+let stopBtn = document.querySelector('#stop');
+let hours = document.querySelector('#hours');
+let minutes = document.querySelector('#minutes');
+let seconds = document.querySelector('#seconds');
+let secTenth = document.querySelector('#secTenth');
 
-function displayTime() {
-
-    const timeNow = new Date();
-
-    let hoursOfDay = timeNow.getHours();
-    let minutes = timeNow.getMinutes();
-    let seconds = timeNow.getSeconds();
-    let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    let today = weekDay[timeNow.getDay()];
-    let months = timeNow.toLocaleString("default", {
-        month: "long"
-    });
-    let year = timeNow.getFullYear();
-    let period = "AM";
-
-    if (hoursOfDay > 12) {
-        hoursOfDay-= 12;
-        period = "PM";
-    }
-
-    if (hoursOfDay === 0) {
-        hoursOfDay = 12;
-        period = "AM";
-    }
-
-    hoursOfDay = hoursOfDay < 10 ? "0" + hoursOfDay : hoursOfDay;
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-
-    let time = hoursOfDay + ":" + minutes + ":" + seconds + period;
-
-    document.getElementById('Clock').innerHTML = time + " " + today + " " + months + " " + year;
-
-}
-displayTime();
+let timer = new Timer();
+timer.addEventListener('secondTenthsUpdated', () => {
+    const obj = timer.getTimeValues();
+    hours.innerText = obj.hours.toString().padStart(2, '0');
+    minutes.innerText = obj.minutes.toString().padStart(2, '0');
+    seconds.innerText = obj.seconds.toString().padStart(2, '0');
+    secTenth.innerText = obj.secondTenths.toString().padStart(2, '0');
+})
+startBtn.addEventListener('click', () => {
+    timer.start({
+        precision: 'secondTenths'
+    })
+})
+pauseBtn.addEventListener('click', () => {
+    timer.pause();
+})
+stopBtn.addEventListener('click', () => {
+    timer.stop();
+})

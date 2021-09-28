@@ -85,10 +85,12 @@ document.addEventListener('keydown', function(event) {
         alreadyGuessed.innerHTML = ''
         keyGuessed.innerHTML = 'Would you like to play again?';
         keyGuessed.style.fontSize = '25px';
+        gettLetter();
+        guesses = [];
 
         
     }
-     else if (english.includes(event.key.toLowerCase())) {
+       else if (english.includes(event.key.toLowerCase())) {
         warning.style.color = 'red';
         warning.style.fontSize = '20px'
         warning.style.fontWeight = 'bold'
@@ -99,17 +101,22 @@ document.addEventListener('keydown', function(event) {
       
         };
 
-    //   else (!english.includes(event.key.toLowerCase())) {
-    //     warning.style.color = 'red';
-    //     warning.style.fontSize = '20px'
-    //     warning.style.fontWeight = 'bold'
-    //     alreadyGuessed.innerHTML = guesses;
-    //     warning.innerHTML = 'please inter a valid letter';
-    //    };
+         if (!english.includes(event.key.toLowerCase())) {
+            warning.style.color = 'red';
+                warning.style.fontSize = '20px'
+                warning.style.fontWeight = 'bold'
+                alreadyGuessed.innerHTML = guesses;
+                warning.innerHTML = 'please inter a valid letter';
+       };
+
+       
 
     
 
 	
 });
+
+yesButton.addEventListener('click', ()=> {location.reload()
+} )
 
 
