@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  align-content: center;
+}
+
+.digital {
+  position: absolute;
+  left: 49%;
+  font-weight: bolder;
+}
+
+.clock {
+  border: 20px solid grey;
+  border-radius: 50%;
+  position: relative;
+  height: 20rem;
+  width: 20rem;
+  margin: 50px auto;
+  padding: 10px;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgb(43, 139, 5);
+}
+
+.center {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  background: black;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+}
+
+.hand {
+  position: absolute;
+  width: 50%;
+  height: 6px;
+  background: black;
+  top: 50%;
+  transform-origin: 100%;
+  transform: translateY(-3px);
+  transition: transform 0.05s transition-timing-function
+    cubic-bezier(0.1, 2.7, 0.58, 1);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.hour-hand {
+  top: 50%;
+  width: 35%;
+  left: 15%;
+  height: 10px;
+  transform: translateY(-5px) rotate(180deg);
+  background-color: #fff;
+  border: 3px solid #000;
+}
+
+.min-hand {
+  width: 45%;
+  left: 5%;
+  height: 7px;
+  transform: translateY(-3.5px) rotate(270deg);
+  opacity: 0.8;
+}
+
+.second-hand {
+  height: 4px;
+  background: red;
+  z-index: 9;
+  transform: translateY(-2px) rotate(270deg);
+}
+
+.center-red {
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  border-radius: 50%;
+  background: red;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 10;
+}
+
+.hour {
+  position: absolute;
+  height: 100%;
+  width: 12.5%;
+  color: white;
+  font-size: 3em;
+  font-family: WallClock;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  /*visibility: hidden;*/
+}
+.hour2 {
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  color: rgb(46, 42, 42);
+  font-size: 1.5em;
+  font-family: WallClock;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.twelve {
+  transform: translate(-50%, -50%) rotateZ(0deg);
+  z-index: 1;
+}
+
+.twelve div {
+  transform: rotate(0deg);
+}
+
+.nine {
+  transform: translate(-50%, -50%) rotateZ(270deg);
+  z-index: 1;
+}
+
+.nine div {
+  transform: rotate(90deg);
+}
+
+.six {
+  transform: translate(-50%, -50%) rotateZ(180deg);
+  z-index: 1;
+}
+
+.six div {
+  transform: rotate(180deg);
+}
+
+.three {
+  transform: translate(-50%, -50%) rotateZ(90deg);
+  z-index: 1;
+}
+
+.three div {
+  transform: rotate(270deg);
+}
+.one {
+  transform: translate(-50%, -50%) rotateZ(30deg);
+  z-index: 1;
+}
+
+.one div {
+  transform: rotate(180deg);
+}
+.two {
+  transform: translate(-50%, -50%) rotateZ(60deg);
+  z-index: 1;
+}
+
+.two div {
+  transform: rotate(180deg);
+}
+.four {
+  transform: translate(-50%, -50%) rotateZ(120deg);
+  z-index: 1;
+}
+
+.four div {
+  transform: rotate(180deg);
+}
+.five {
+  transform: translate(-50%, -50%) rotateZ(150deg);
+  z-index: 1;
+}
+
+.five div {
+  transform: rotate(180deg);
+}
+.seven {
+  transform: translate(-50%, -50%) rotateZ(210deg);
+  z-index: 1;
+}
+
+.seven div {
+  transform: rotate(180deg);
+}
+.eight {
+  transform: translate(-50%, -50%) rotateZ(240deg);
+  z-index: 1;
+}
+
+.eight div {
+  transform: rotate(180deg);
+}
+.ten {
+  transform: translate(-50%, -50%) rotateZ(300deg);
+  z-index: 1;
+}
+
+.ten div {
+  transform: rotate(180deg);
+}
+.eleven {
+  transform: translate(-50%, -50%) rotateZ(330deg);
+  z-index: 1;
+}
+
+.eleven div {
+  transform: rotate(180deg);
+}
