@@ -14,12 +14,12 @@ function pad(n) {
 }
 
 function update() {
-  var now = new Date().getTime(),
+  let now = new Date().getTime(),
     dt = now - lastUpdateTime;
 
   currentTimer += dt;
 
-  var time = new Date(currentTimer);
+  let time = new Date(currentTimer);
 
   mins.innerHTML = pad(time.getMinutes());
   secs.innerHTML = pad(time.getSeconds());
