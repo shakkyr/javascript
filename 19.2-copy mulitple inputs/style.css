@@ -12,7 +12,7 @@ h1 {
 }
 .box {
     border: black solid 3px;
-    width: 500px;
+    width: 600px;
     height: 200px;
     margin-top: 100px;
     margin-left: auto;
@@ -22,38 +22,29 @@ h1 {
     
 }
 
-.smallBoxes {
-    display: flex;
+.text {
+    
     justify-content: center;
     align-items: center;
     list-style: none;
-    margin-right: 40px;
+    margin-right: 20px;
     margin-top: 60px;
-
-   
-}
-
-li {
-    
-    width:50px ;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-  
-}
-
-input {
     width:50px ;
     height: 50px;
     border: grey 2px solid;
     text-align: center;
      font-size: 40px;
+     margin-left: 5px;
+
+   
 }
 
-.submit {
-    background:black ;
-    color: cornsilk;
-    width: 80px;
+.submitn {
+    width: 100px;
+    background: black;
+    color: blanchedalmond;
     height: 30px;
-    font-size: 20px;
+    position: relative;
+    top: -40px;
 }
+
