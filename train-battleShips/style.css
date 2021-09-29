@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+}
+
+.grid-user {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: skyblue;
+    margin: 20px;
+}
+
+.grid div {
+    width: 40px;
+    height: 40px;
+}
+
+.grid-computer {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: green;
+    margin: 20px;
+}
+
+.grid-display {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(170, 187, 20);
+    margin: 20px;
+}

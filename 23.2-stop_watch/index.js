@@ -7,7 +7,7 @@ let currentTimer = 0,
     reset = document.querySelector(".reset"),
     mins = document.querySelector(".minutes"),
     secs = document.querySelector(".seconds"),
-    cents = document.querySelector(".milliseconds");
+    milli = document.querySelector(".milliseconds");
 
 function pad(n) {
   return ("00" + n).substr(-2);
@@ -23,7 +23,7 @@ function update() {
 
   mins.innerHTML = pad(time.getMinutes());
   secs.innerHTML = pad(time.getSeconds());
-  cents.innerHTML = pad(Math.floor(time.getMilliseconds() / 10));
+  milli.innerHTML = pad(Math.floor(time.getMilliseconds() / 10));
 
   lastUpdateTime = now;
 }
@@ -45,7 +45,7 @@ function resetTimer() {
 
   currentTimer = 0;
 
-  mins.innerHTML = secs.innerHTML = cents.innerHTML = pad(0);
+  mins.innerHTML = secs.innerHTML = milli.innerHTML = pad(0);
 }
 
 
