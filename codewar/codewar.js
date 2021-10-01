@@ -413,3 +413,6 @@ console.log(lastSurvivor(str, arr));
 // sairada
 // saiada
 // saada
+
+
+console.log((new Date().getTime()));
