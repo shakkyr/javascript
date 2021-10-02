@@ -58,7 +58,7 @@ function setMyWorld(arr) {
       element.dataset.elementCoordinateX = y;
       element.dataset.elementCoordinateY = x;
       element.addEventListener('click', mainFunction)
-      document.querySelector('.mineWorld').appendChild(element);
+      world.appendChild(element);
     }
   }
 }
