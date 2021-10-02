@@ -73,28 +73,28 @@ function mainFunction(e) {
              if (woodContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 5;
               woodContainer.innerHTML--;
-              toolBank =0;
+              
              }
             break;
           case "groundContainer":
             if (groundContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 2;
               groundContainer.innerHTML--;
-              toolBank =0;
+             
              }
             break;
           case "rockContainer":
             if (rockContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 4;
               rockContainer.innerHTML--;
-              toolBank =0;
+              
              }
             break;
           case "leafsContainer":
             if (leafsContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 6;
               leafsContainer.innerHTML--;
-              toolBank=0 ;
+             
              }
             break;
         
@@ -187,8 +187,9 @@ leafsContainer.addEventListener('click',() => {
 
 // =================== reset =====================
 reset.addEventListener('click', ()=> {
-  window.location.reload();
-
+     world.innerHTML = ''
+     setMyWorld(mineWorld);
+     
 });
 
 exit.addEventListener('click' , ()=> {
