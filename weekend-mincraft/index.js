@@ -1,7 +1,18 @@
+const pickAxe = document.querySelector('.pickAxe'),
+      reset = document.querySelector('.reset'),
+      exit = document.querySelector('.exit'),
+      shovel = document.querySelector('.shovel'),
+      axe = document.querySelector('.axe'),
+      woodContainer = document.querySelector('.woodContainer'),
+      groundContainer = document.querySelector('.groundContainer'),
+      rockContainer = document.querySelector('.rockContainer'),
+      leafsContainer = document.querySelector('.leafsContainer');
+
+
+groundContainer.innerHTML = '0';
 let world = document.querySelector('.mineWorld');
 
-
-const mineWorld = [
+let mineWorld = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0],
@@ -36,17 +47,166 @@ const mineWorld = [
   setMyWorld(mineWorld);
 
 
-function setMyWorld(matrix) {
-  for (let x = 0; x < matrix.length; x++) {
-    for (let y = 0; y < matrix[x].length; y++) {
+function setMyWorld(arr) {
+  for (let x = 0; x < arr.length; x++) {
+    for (let y = 0; y < arr[x].length; y++) {
       let element = document.createElement('div');
       element.classList.add('element');
-      element.dataset.elementType = matrix[x][y];
+      element.dataset.elementType = arr[x][y];
       element.dataset.elementCoordinateX = y;
       element.dataset.elementCoordinateY = x;
+      element.addEventListener('click', mainFunction)
       document.querySelector('.mineWorld').appendChild(element);
     }
   }
 }
+
+function mainFunction(e) {
+ 
+  let dataType =  e.path[0].dataset.elementType.toString();
+  switch (dataType) {
+    case "0":
+        switch (itemBank) {
+          case "woodContainer":
+             if (woodContainer.innerHTML > 0 ){
+              e.path[0].dataset.elementType = 5;
+              woodContainer.innerHTML--;
+             }
+            break;
+          case "groundContainer":
+            if (groundContainer.innerHTML > 0 ){
+              e.path[0].dataset.elementType = 2;
+              groundContainer.innerHTML--;
+             }
+            break;
+          case "rockContainer":
+            if (rockContainer.innerHTML > 0 ){
+              e.path[0].dataset.elementType = 4;
+              rockContainer.innerHTML--;
+             }
+            break;
+          case "leafsContainer":
+            if (leafsContainer.innerHTML > 0 ){
+              e.path[0].dataset.elementType = 6;
+              leafsContainer.innerHTML--;
+             }
+            break;
+        
+          default:
+            break;
+        }
+
+      
+      break;
+    case "1":
+     
+
+      break;
+    case "2":
+      if (toolBank == 'shovel' ){
+        e.path[0].dataset.elementType = 0;
+        groundContainer.innerHTML++
+        groundContainer.style.visibility = 'visible';
+      }
+      
+      break;
+    case "3":
+      if (toolBank == 'shovel' ){
+        e.path[0].dataset.elementType = 0;
+        groundContainer.innerHTML++
+        groundContainer.style.visibility = 'visible';
+      }
+
+      break;
+    case "4":
+      if (toolBank == 'pickAxe' ){
+        e.path[0].dataset.elementType = 0;
+        rockContainer.innerHTML++
+        rockContainer.style.visibility = 'visible';
+      }
+
+      break;
+    case "5":
+      if (toolBank == 'axe' ){
+        e.path[0].dataset.elementType = 0;
+        woodContainer.innerHTML++
+        woodContainer.style.visibility = 'visible';
+      }
+
+      break;
+    case "6":
+      if (toolBank == 'axe' ){
+        e.path[0].dataset.elementType = 0;
+        leafsContainer.innerHTML++
+        leafsContainer.style.visibility = 'visible';
+      }
+      break;
+    
+
+
+  }
+}
+let toolBank ;
+pickAxe.addEventListener('click', () => {
+    toolBank = 'pickAxe';
+ 
+})
+
+shovel.addEventListener('click', () => {
+  toolBank = 'shovel';
+
+})
+axe.addEventListener('click', () => {
+  toolBank = 'axe';
+
+})
+
+let itemBank;
+woodContainer.addEventListener('click',() => {
+  itemBank = "woodContainer";
+})
+groundContainer.addEventListener('click',() => {
+  itemBank = "groundContainer";
+})
+rockContainer.addEventListener('click',() => {
+  itemBank = "rockContainer";
+})
+leafsContainer.addEventListener('click',() => {
+  itemBank = "leafsContainer";
+})
+
+  
+
+// =================== reset =====================
+reset.addEventListener('click', ()=> {
+  setMyWorld()
+  setMyWorld(mineWorld);
+
+});
+
+
+
+function pickpart(e){
+  console.log(tools)
+  // this.setAttribute("data-element-type","0")
+  if(tools == "axe"){
+       
+       if(e.path[0].dataset.elementType == 5 || e.path[0].dataset.elementType == 3){
+         this.setAttribute("data-element-type","0")
+  }}
+   if(tools == "shovel"){
+       console.log('aa')
+       if(e.path[0].dataset.elementType == 1 || e.path[0].dataset.elementType == 2){
+        // console.log(tools)
+         this.setAttribute("data-element-type","0")
+  }
+} 
+  else if(tools == "pickaxe"){
+       if(e.path[0].dataset.elementType == 4 ){
+         this.setAttribute("data-element-type","0")
+  }}
+}
+
+
 
 

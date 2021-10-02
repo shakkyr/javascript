@@ -206,6 +206,9 @@ div[data-element-type="6"] {
     position: absolute;
     left: 33%;
     top: 60%;
+    color: azure;
+    visibility: hidden;
+    background: url(./img/tree_trunk.png) no-repeat center center/cover;
   }
 
 .groundContainer {
@@ -216,6 +219,9 @@ div[data-element-type="6"] {
     position: absolute;
     left: 33%;
     top: 67%;
+    color: azure;
+    visibility: hidden;
+    background: url(./img/ground.png) no-repeat center center/cover;
 }
 
 .rockContainer {
@@ -226,6 +232,21 @@ div[data-element-type="6"] {
     position: absolute;
     left: 33%;
     top: 74%;
+    color: azure;
+    visibility: hidden;
+    background: url(./img/rock.png) no-repeat center center/cover;
+}
+.leafsContainer {
+    height: 5vh;
+    width: 5vh;
+    border: 1px solid rgb(174, 174, 174);
+    margin: 5px;
+    position: absolute;
+    left: 33%;
+    top: 81%;
+    color: azure;
+    visibility: hidden;
+    background: url(./img/leaves.png) no-repeat center center/cover;
 }
 
 .storage:hover {
