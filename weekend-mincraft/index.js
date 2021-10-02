@@ -73,28 +73,28 @@ function mainFunction(e) {
              if (woodContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 5;
               woodContainer.innerHTML--;
-              toolBank ;
+              toolBank =0;
              }
             break;
           case "groundContainer":
             if (groundContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 2;
               groundContainer.innerHTML--;
-              toolBank ;
+              toolBank =0;
              }
             break;
           case "rockContainer":
             if (rockContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 4;
               rockContainer.innerHTML--;
-              toolBank ;
+              toolBank =0;
              }
             break;
           case "leafsContainer":
             if (leafsContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 6;
               leafsContainer.innerHTML--;
-              toolBank ;
+              toolBank=0 ;
              }
             break;
         
@@ -170,6 +170,7 @@ axe.addEventListener('click', () => {
 let itemBank;
 woodContainer.addEventListener('click',() => {
   itemBank = "woodContainer";
+  toolBank =0;
 })
 groundContainer.addEventListener('click',() => {
   itemBank = "groundContainer";
@@ -179,6 +180,7 @@ rockContainer.addEventListener('click',() => {
 })
 leafsContainer.addEventListener('click',() => {
   itemBank = "leafsContainer";
+  toolBank =0;
 })
 
   
