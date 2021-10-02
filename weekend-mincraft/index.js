@@ -200,26 +200,7 @@ start.addEventListener('click', ()=> {
 
 
 
-function pickpart(e){
-  console.log(tools)
-  // this.setAttribute("data-element-type","0")
-  if(tools == "axe"){
-       
-       if(e.path[0].dataset.elementType == 5 || e.path[0].dataset.elementType == 3){
-         this.setAttribute("data-element-type","0")
-  }}
-   if(tools == "shovel"){
-       console.log('aa')
-       if(e.path[0].dataset.elementType == 1 || e.path[0].dataset.elementType == 2){
-        // console.log(tools)
-         this.setAttribute("data-element-type","0")
-  }
-} 
-  else if(tools == "pickaxe"){
-       if(e.path[0].dataset.elementType == 4 ){
-         this.setAttribute("data-element-type","0")
-  }}
-}
+
 
 
 
