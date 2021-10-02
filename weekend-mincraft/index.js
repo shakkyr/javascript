@@ -9,7 +9,7 @@ const pickAxe = document.querySelector('.pickAxe'),
       leafsContainer = document.querySelector('.leafsContainer');
 
 
-groundContainer.innerHTML = '0';
+
 let world = document.querySelector('.mineWorld');
 
 let mineWorld = [
