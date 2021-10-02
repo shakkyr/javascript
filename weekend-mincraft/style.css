@@ -207,7 +207,7 @@ div[data-element-type="6"] {
     left: 33%;
     top: 60%;
     color: azure;
-    visibility: hidden;
+    /* visibility: hidden; */
     background: url(./img/tree_trunk.png) no-repeat center center/cover;
   }
 
@@ -220,7 +220,7 @@ div[data-element-type="6"] {
     left: 33%;
     top: 67%;
     color: azure;
-    visibility: hidden;
+    /* visibility: hidden; */
     background: url(./img/ground.png) no-repeat center center/cover;
 }
 
@@ -233,7 +233,7 @@ div[data-element-type="6"] {
     left: 33%;
     top: 74%;
     color: azure;
-    visibility: hidden;
+    /* visibility: hidden; */
     background: url(./img/rock.png) no-repeat center center/cover;
 }
 .leafsContainer {
@@ -245,7 +245,7 @@ div[data-element-type="6"] {
     left: 33%;
     top: 81%;
     color: azure;
-    visibility: hidden;
+    /* visibility: hidden; */
     background: url(./img/leaves.png) no-repeat center center/cover;
 }
 

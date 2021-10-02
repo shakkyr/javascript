@@ -1,12 +1,14 @@
 const pickAxe = document.querySelector('.pickAxe'),
       reset = document.querySelector('.reset'),
-      exit = document.querySelector('.exit'),
       shovel = document.querySelector('.shovel'),
+      exit = document.querySelector('.exit'),
+      start = document.querySelector('.start'),
       axe = document.querySelector('.axe'),
       woodContainer = document.querySelector('.woodContainer'),
       groundContainer = document.querySelector('.groundContainer'),
       rockContainer = document.querySelector('.rockContainer'),
-      leafsContainer = document.querySelector('.leafsContainer');
+      leafsContainer = document.querySelector('.leafsContainer'),
+      frontPage = document.querySelector('#frontPage');
 
 
 
@@ -71,24 +73,28 @@ function mainFunction(e) {
              if (woodContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 5;
               woodContainer.innerHTML--;
+              toolBank ;
              }
             break;
           case "groundContainer":
             if (groundContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 2;
               groundContainer.innerHTML--;
+              toolBank ;
              }
             break;
           case "rockContainer":
             if (rockContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 4;
               rockContainer.innerHTML--;
+              toolBank ;
              }
             break;
           case "leafsContainer":
             if (leafsContainer.innerHTML > 0 ){
               e.path[0].dataset.elementType = 6;
               leafsContainer.innerHTML--;
+              toolBank ;
              }
             break;
         
@@ -106,7 +112,7 @@ function mainFunction(e) {
       if (toolBank == 'shovel' ){
         e.path[0].dataset.elementType = 0;
         groundContainer.innerHTML++
-        groundContainer.style.visibility = 'visible';
+        // groundContainer.style.visibility = 'visible';
       }
       
       break;
@@ -114,7 +120,7 @@ function mainFunction(e) {
       if (toolBank == 'shovel' ){
         e.path[0].dataset.elementType = 0;
         groundContainer.innerHTML++
-        groundContainer.style.visibility = 'visible';
+        // groundContainer.style.visibility = 'visible';
       }
 
       break;
@@ -122,7 +128,7 @@ function mainFunction(e) {
       if (toolBank == 'pickAxe' ){
         e.path[0].dataset.elementType = 0;
         rockContainer.innerHTML++
-        rockContainer.style.visibility = 'visible';
+        // rockContainer.style.visibility = 'visible';
       }
 
       break;
@@ -130,7 +136,7 @@ function mainFunction(e) {
       if (toolBank == 'axe' ){
         e.path[0].dataset.elementType = 0;
         woodContainer.innerHTML++
-        woodContainer.style.visibility = 'visible';
+        // woodContainer.style.visibility = 'visible';
       }
 
       break;
@@ -138,7 +144,7 @@ function mainFunction(e) {
       if (toolBank == 'axe' ){
         e.path[0].dataset.elementType = 0;
         leafsContainer.innerHTML++
-        leafsContainer.style.visibility = 'visible';
+        // leafsContainer.style.visibility = 'visible';
       }
       break;
     
@@ -179,10 +185,18 @@ leafsContainer.addEventListener('click',() => {
 
 // =================== reset =====================
 reset.addEventListener('click', ()=> {
-  setMyWorld()
-  setMyWorld(mineWorld);
+  window.location.reload();
 
 });
+
+exit.addEventListener('click' , ()=> {
+ 
+  frontPage.style.visibility = 'visible';
+})
+
+start.addEventListener('click', ()=> {
+  window.location.reload();
+})
 
 
 
