@@ -1,5 +1,5 @@
 const storm = {
-    superPower : 'flying',
+    superPower : ['flying' + ' and' + ' weather'],
     Power : printSuperPower
     }
     function printSuperPower() {
