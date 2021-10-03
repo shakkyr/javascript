@@ -9,6 +9,12 @@ console.log(this);
 // we can fix it by changing the greet to function expression as below
 const myObj = {
     name: "Timmy",
+    greet:  ()=> {
+        console.log(`Hello ${this.name}`);
+    }
+};
+const myObj = {
+    name: "Timmy",
     greet: function () {
         console.log(`Hello ${this.name}`);
     }
@@ -45,6 +51,10 @@ myFuncArrow();
 // 5.
 // `this` points to the window object, again because it's an arrow function
 // we can fix it by changing it to regular function
+document.querySelector(".element").addEventListener(() => {
+    console.log(this);
+    });
+    
 document.querySelector(".element").addEventListener(`click`, function () {
 
     console.log(this);
