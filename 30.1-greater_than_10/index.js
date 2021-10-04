@@ -16,3 +16,13 @@ function checkNumber(n) {
 };
 checkNumber(2).then( (res)=>console.log(res))
 .catch( (error) =>console.log(error))
+
+
+//! ================================= adeeb ========================================
+//! ===========================================================================
+function numIsGreaterThan10(num) {
+    return new Promise((resolve, reject) => {
+        if (num > 10) { resolve(true) } else if (num == 10) { resolve('equal') } else { reject() }
+    })
+}
+numIsGreaterThan10(11).then((res) => console.log(res)).catch(() => console.log(false))
