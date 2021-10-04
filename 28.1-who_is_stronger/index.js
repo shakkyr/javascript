@@ -21,6 +21,8 @@ const hero = { // dont change this
    }
    console.log(whoIsStronger(hero.getStrength.bind(hero)));
 
+   
+
 //    getStrength() evaluate undefined, because this is in window scope 
 
 
