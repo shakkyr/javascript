@@ -14,7 +14,7 @@ function checkNumber(n) {
     });
     
 };
-checkNumber(2).then( (res)=>console.log(res))
+checkNumber(2).then( (data)=>console.log(data))
 .catch( (error) =>console.log(error))
 
 
