@@ -6,14 +6,13 @@
 function checkNumber(n) {
     return new Promise((resolve,reject) => {
         if (n >10){
-            resolve()
+            resolve( 'greater than 10')
         }
-        else {reject()
+        else {reject('error the number is smaller than 10 ')
         };
 
     });
     
 };
-let num = 2;
-checkNumber(num).then( ()=>console.log('greater than 10'))
-.catch( () =>console.log('smaller than 10'))
+checkNumber(2).then( (res)=>console.log(res))
+.catch( (error) =>console.log(error))
