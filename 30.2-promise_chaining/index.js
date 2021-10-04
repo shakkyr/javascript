@@ -12,6 +12,20 @@ const list1 = ['shadi', 'adeeb', 'seham', 'timor', 32];
 
 
 function makeAllCaps(arr) {
-    let newArr = arr.toUpperCase();
-    return newArr;
-}
+    return new Promise((resolve, reject) => {
+     let   newArr = arr.map(ele => typeof(ele) === 'string' ? ele.toUpperCase() : reject() ) 
+        resolve(newArr);
+    })
+    
+    
+
+    
+};
+function sortWords(arr) {
+    return new Promise((resolve,reject) => {
+      resolve(arr.sort());
+      reject()
+    });
+  }
+makeAllCaps(list).then(()=> console.log(`all is ok : ${resolve}`)).catch(()=>console.log('not all is strings') )
+sortWords(list).then((console.log(list) ))
