@@ -426,3 +426,90 @@ makeAllCaps(arrayOfWords).then((output) => {
 
 
 
+//! ==================================== 5-10-21 =====================
+//! ====================================================================
+
+function addNumbersToArray(n) {
+    return new Promise((resolve, reject) => {
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr.push(Math.floor(Math.random() * 1000));
+        }
+        resolve(arr);
+    })
+}
+
+function sumAllDigits(num) {
+    let sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num = parseInt(num / 10)
+    }
+    return sum;
+}
+
+
+async function createArr(n) {
+    return new Promise((resolve, reject) => {
+        if (n <= 0) {
+            reject('n must be positive')
+        }
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr.push(Math.floor(Math.random() * 100))
+        }
+        resolve(arr);
+    })
+}
+
+//123 = >6
+//4 =>4
+const sumDigits = (num) => {
+    return new Promise((resolve, reject) => {
+        if (typeof num !== "number") {
+            reject('not a number')
+        }
+        let sum = 0;
+        while (num > 0) {
+            sum = sum + num % 10
+            num = parseInt(num / 10)
+        }
+        resolve(sum);
+    })
+}
+
+
+const createArr2 = async (n) => {
+    return new Promise((resolve, reject) => {
+        if (n <= 0) {
+            reject('n must be positive')
+        }
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr.push(Math.floor(Math.random() * 100))
+        }
+        resolve(arr);
+    })
+}
+
+async function run() {
+    const arr = await createArr(20);
+    console.log(arr);
+
+    let all =arr.map((item) => { //get array of promises
+        return sumDigits(item)
+    })
+
+    console.log("Array.from(all) :",Array.from(all))
+    Promise.all(all)
+        .then((data) => {
+        console.log(data)
+    })
+
+    let sumAll = await Promise.all(all);
+    console.log("sumAll :",sumAll)
+}
+
+run()
+
+
