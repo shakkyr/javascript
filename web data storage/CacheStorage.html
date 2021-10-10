@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Browser Storage Demos - Cache Storage API </title>	
+		
+		<script type = "text/javascript">
+		
+				//Check for browser support
+				if('caches' in window) {
+				
+					function add()
+					{
+						//Open the cache store, create if not exists
+						caches.open('data_cache').then((cache) => {
+							
+							//Fetch data.json from origin server and add the response to the cache store 
+							//Cross origin response caching is allowed - specify complete Request URL
+							// Request object as the key
+							cache.add(new Request('/data.json'));
+
+							var data={foo: "bar"};					
+							
+							//Add additional header option to the response object before caching
+							const jsonResponse = new Response(JSON.stringify(data), {
+								  headers: {
+									'content-type': 'application/json'
+								  }
+							});
+
+							//Add Custom JSON data to the cache store
+							cache.put('/custom.json', jsonResponse);				
+
+						}).catch((err) => {
+							console.log(err);
+						});
+					}	
+
+					//Add multiple URL's into the cache - browser fetches the responses from origin
+					function addAll()
+					{
+						caches.open('data_cache').then((cache) => {				
+							const urls = ['/data1.json', '/data2.json','/data3.json'];
+							cache.addAll(urls);	
+						}).catch((err) => {
+							console.log(err);
+						});
+					}				
+					
+					
+					//Check Cache Store Status
+					function checkCacheStatus()
+					{
+						caches.has('data_cache').then((bool) => {
+						
+						 document.getElementById("data").innerHTML = "Cache data_cache is available: " + bool+"<br />";
+
+						}).catch((err) => {
+						}) 
+						
+						caches.has('teat_cache').then((bool) => {
+						
+						 document.getElementById("data").innerHTML += "Cache test_cache is available: " + bool;
+
+						}).catch((err) => {
+						}) 
+					
+					}
+					
+					//Delete Cache Store
+					function deleteCache()
+					{		
+							caches.delete('data_cache').then((bool) => {			
+							document.getElementById("data").innerHTML = "Cache data_cache is deleted";
+						}).catch((err) => {
+						})		
+					}
+					
+					//Delete specific object from cache store through cache key(request URL or object)
+					function deleteCacheObject()
+					{		
+							caches.open('data_cache').then((cache) => {
+							
+							cache.delete('custom.json');							
+
+						}).catch((err) => {
+							console.log(err);
+						});	
+					}
+					
+					//Get all cache keys from cache store
+					function getAllKeys()
+					{		
+							caches.open('data_cache').then((cache) => {
+							
+							document.getElementById("data").innerHTML = "";
+							cache.keys().then(function(keys) {				
+								keys.forEach(function(key) {
+										document.getElementById("data").innerHTML += key.url+"<br />";	
+								});					
+							});
+										
+
+						}).catch((err) => {
+							console.log(err);
+						});	
+					}
+					
+					//Get Cache data from cache store
+					function getCacheData()
+					{	
+						caches.open('data_cache').then((cache) => {
+						document.getElementById("data").innerHTML = "";			
+								cache.match('custom.json').then((response)=> {
+								response.json().then(data => {
+									document.getElementById("data").innerHTML = JSON.stringify(data);
+								});
+									
+								})							
+
+						}).catch((err) => {
+							console.log(err);
+						});	
+					}				
+				
+			} else {
+					console.log("No Cache Storage API support..");		
+			}		
+
+		</script>			
+	</head>
+	<body>
+		Welcome to Browser Storage Demos - Cache Storage API	<br/> 
+
+		<p id="data"></p>
+                <button onclick = "add()">Add to Cache </button> 
+		<button onclick = "addAll()">Add All</button> 
+		<button onclick = "checkCacheStatus()">Cache Status </button>
+		<button onclick = "deleteCache()">Delete Cache </button> 
+		<button onclick = "deleteCacheObject()">Delete Cache Object</button> 	
+		<button onclick = "getAllKeys()">Get All Keys</button>
+		<button onclick = "getCacheData()">Get Cache Data</button> 	 		
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Browser Storage Demos - Web Storage API </title>	
+		
+		<script type = "text/javascript">
+		
+			//Check for browser support
+			if (typeof(Storage) !== "undefined") {
+   
+				 function addToStorage()
+				 {
+				     //add data to the local storage by either one of the below option
+				     localStorage.setItem("testlocal", "test Local Data");
+				     //localStorage.testlocal= "test Local Data";
+				   
+				      //add data to the session storage by either one of the below option
+				      sessionStorage.setItem("testsession", "test Session Data");
+				      //sessionStorage.testsession=  "test Session Data";
+				   
+                                      //Add JSON object to the storage
+				      var testObject = { 'test1': 1, 'test2': 2, 'test3': 3 };
+				      localStorage.setItem('testObject', JSON.stringify(testObject));
+				 }
+ 
+				 function removeFromStorage()
+				 {
+				      //Remove item from local storage
+				      localStorage.removeItem("testlocal");
+				  
+                                      //Clear the storage
+				      //localStorage.clear();
+  
+				      //Remove item from session storage
+				      sessionStorage.removeItem("testsession");
+				      //sessionStorage.clear();
+				 }
+ 
+				 function readDataFromStrage()
+				 {
+  
+				      //Read data from local storage
+				      document.getElementById("data").innerHTML= "Local Storage Data.."+localStorage.getItem("testlocal")+"<br />";
+				 
+                                      //read data from session storage
+				      document.getElementById("data").innerHTML+="Session Storage Data.."+sessionStorage.getItem("testsession")+"<br />";
+				  
+                                      //Reterive JSON data from storage
+				      var retrievedObject = localStorage.getItem('testObject');
+				      document.getElementById("data").innerHTML+="JSON Data From Storage: "+JSON.stringify(retrievedObject);
+				 }
+			} else {
+			 console.log("No Web Storage support..");  
+			}
+		</script>			
+	</head>
+	<body>
+		Welcome to Browser Storage Demos - Web Storage API	<br/> 
+
+		<p id="data"></p>
+                <button onclick = "readDataFromStrage()">Read</button>
+                <button onclick = "addToStorage()">Add data </button>
+                <button onclick = "removeFromStorage()">Delete data </button>
+	</body>
+</html>
