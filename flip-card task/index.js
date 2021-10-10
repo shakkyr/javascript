@@ -27,6 +27,7 @@ startAgain.addEventListener('click', function () {
     
     })
 
+
   
   // Effect Duration
   let duration = 1000;
