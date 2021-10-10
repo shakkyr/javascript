@@ -21,13 +21,11 @@ let startAgain = document.querySelector('.startAgain'),
     largeSize = document.querySelector('.large');
 
 
-smallSize.addEventListener('click', function () {
-    for (let i = 0 ; i < 20; i+2) {
-        memory_game_blocks.innerHTML = `<div class="game-block" data-tree="${i}"></div>`
-    }
-    
-})
 
+startAgain.addEventListener('click', function () {
+        window.location.reload()
+    
+    })
 
   
   // Effect Duration
